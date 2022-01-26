@@ -7,6 +7,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "lottie-vuejs": "^0.4.0",
     "swiper": "^6.7.5",
     "vue": "^3.2.25",

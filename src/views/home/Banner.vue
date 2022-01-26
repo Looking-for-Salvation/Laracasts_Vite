@@ -4,7 +4,7 @@
 			<div class="flex flex-col home-banner-inner">
 				<the-header transparent home></the-header>
 				<div class="flex flex-1 py-10 mt-10 home-banner-main section lg:items-center lg:mt-0">
-					<div class="container w-full mx-auto" style="max-width: 1400px;">
+					<div class="container w-full mx-auto" style="max-width: 1400px">
 						<div class="grid grid-cols-12">
 							<img
 								id="home-banner-illustration"
@@ -20,13 +20,13 @@
 							<div
 								class="relative max-w-sm col-span-12 mx-auto text-center font-IranSans md:mt-10 lg:mt-0 home-banner-content md:col-start-5 md:col-span-8 xl:col-start-7 xl:col-span-6 lg:max-w-none lg:mx-0 lg:mr-6 xl:mx-0"
 							>
-								<h1 class="tracking-normal header-title mb-7 md:mb-8 md:font-light" style="width: max-content;">
+								<h1 class="tracking-normal header-title mb-7 md:mb-8 md:font-light" style="width: max-content">
 									مرجع آموزش
 									<span
 										class="block font-normal leading-tight has-cursor header-title-accent"
 										contenteditable
 										spellcheck="false"
-										style="width: max-content;"
+										style="width: max-content"
 									>
 										برنامه نویسی وب
 									</span>

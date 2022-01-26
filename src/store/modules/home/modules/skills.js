@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export default {
 	namespaced: true,
 	state() {
@@ -41,9 +43,44 @@ export default {
 			],
 		};
 	},
+	mutations: {
+		setSkillsData(state, payload) {
+			state.skills = payload.skills;
+		},
+	},
 	getters: {
 		skills(state) {
 			return state.skills;
+		},
+	},
+	actions: {
+		loadSkills({ commit }) {
+			axios
+				.get("http://127.0.0.1:8000/api/home/parent-categories")
+				.then((response) => {
+					console.log(response);
+					if (response.ok) return response.json();
+				})
+				.then((data) => {
+					commit("setSkillsData", { skills: data });
+				})
+				.catch((error) => {
+					console.log(error);
+					console.log(error.response);
+				});
+
+			// fetch("http://127.0.0.1:8000/api/home/parent-categories")
+			// 	.then((response) => {
+			// 		console.log(response);
+			// 		if (response.ok) return response.json();
+			// 	})
+			// 	.then((data) => {
+			// 		commit("setSkillsData", { skills: data });
+			// 	})
+			// 	.catch((error) => {
+			// 		console.log(error);
+			// 		console.log(error.response);
+			// 	});
 		},
 	},
 };

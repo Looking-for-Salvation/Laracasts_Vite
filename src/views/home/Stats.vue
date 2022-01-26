@@ -3,8 +3,8 @@
 		<div class="container">
 			<div class="flex items-center mb-6 md:justify-center lg:mb-9">
 				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
-					<div class="mb-1" style="height: 30px;">
-						<img src="../../assets/images/home/series-available-icon.svg" alt="Hours of Learning" />
+					<div class="mb-1" style="height: 30px">
+						<img src="@/assets/images/home/series-available-icon.svg" alt="Hours of Learning" />
 					</div>
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1780;&#1785;</span>
@@ -12,8 +12,8 @@
 					<div class="text-xs tracking-wider text-gray-500 font-IranSans">دوره <span class="hidden md:inline">آموزشی</span></div>
 				</div>
 				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
-					<div class="mb-1" style="height: 30px;">
-						<img src="../../assets/images/home/lessons-available-icon.svg" alt="Hours of Learning" />
+					<div class="mb-1" style="height: 30px">
+						<img src="@/assets/images/home/lessons-available-icon.svg" alt="Hours of Learning" />
 					</div>
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1777;&#1785;&#1778;&#1782;</span>
@@ -21,8 +21,8 @@
 					<div class="text-xs tracking-wider text-gray-500 font-IranSans">جلسه <span class="hidden md:inline">ویدویی</span></div>
 				</div>
 				<div class="home-skills-stat_item text-center card mx-3 flex-1 lg:flex-none w-auto lg:w-[150px] h-auto rounded-2xl p-4">
-					<div class="mb-1" style="height: 30px;">
-						<img src="../../assets/images/home/hours-of-learning-icon.svg" alt="Hours of Learning" />
+					<div class="mb-1" style="height: 30px">
+						<img src="@/assets/images/home/hours-of-learning-icon.svg" alt="Hours of Learning" />
 					</div>
 					<div class="mb-1 text-xl text-black font-IranSans">
 						<span>&#1779;&#1778;&#1782;</span>
