@@ -29,6 +29,9 @@
 					</div>
 					<div class="text-xs tracking-wider text-gray-500 font-IranSans">ساعت <span class="hidden md:inline">آموزش</span></div>
 				</div>
+				<button class="p-4 text-white bg-red-400 border border-black" @click="loadStats">Load Stats</button>
+				<button class="p-4 text-white bg-red-400 border border-black" @click="loadSkills">Load Skills</button>
+				<button class="p-4 text-white bg-red-400 border border-black" @click="logSkills">Log Skills</button>
 			</div>
 			<div class="py-5 mb-4 font-IranSans">
 				<header class="container pb-4 mx-auto mb-4 text-center text-black md:hidden">
@@ -58,7 +61,23 @@ export default {
 		const store = useStore();
 		const skills = computed(() => store.getters["home/skills/skills"]);
 
-		return { skills };
+		const logSkills = () => console.log(skills);
+		const loadSkills = () => store.dispatch("home/skills/loadSkills");
+
+		// const statsData = reactive({});
+		const loadStats = () => {
+			fetch("http://127.0.0.1:8000/api/home/count-lessons")
+				.then((response) => {
+					console.log(response);
+					if (response.ok) return response.json();
+				})
+				.then((data) => {
+					console.log(data);
+				})
+				.catch((error) => console.log(error));
+		};
+
+		return { skills, loadStats, loadSkills, logSkills };
 	},
 };
 </script>
