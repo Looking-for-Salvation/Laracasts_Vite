@@ -86,7 +86,7 @@ export default {
 };
 
 import frameworksImage from "@/assets/images/home/frameworks-default.svg";
-import languagesImages from "@/assets/images/home/languages-default.svg";
+import languagesImage from "@/assets/images/home/languages-default.svg";
 import techniquesImage from "@/assets/images/home/techniques-default.svg";
-import testingImages from "@/assets/images/home/testing-default.svg";
-import toolingImages from "@/assets/images/home/tooling-default.svg";
+import testingImage from "@/assets/images/home/testing-default.svg";
+import toolingImage from "@/assets/images/home/tooling-default.svg";
