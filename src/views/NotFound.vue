@@ -28,6 +28,7 @@
 
 <script>
 import LottieAnimation from "lottie-vuejs/src/LottieAnimation.vue";
+import { onUnmounted } from "@vue/runtime-core";
 
 export default {
 	components: {
@@ -35,6 +36,10 @@ export default {
 	},
 	setup() {
 		document.body.className = "not-found";
+
+		onUnmounted(() => {
+			document.body.classList.remove("not-found");
+		});
 	},
 };
 </script>

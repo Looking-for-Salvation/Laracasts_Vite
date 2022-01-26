@@ -1,10 +1,10 @@
 <template>
-	<div class="footer-wrap mobile:text-lg">
+	<div class="footer-wrap mobile:text-lg" id="footer">
 		<img
 			src="../../assets/images/footer-gang.svg"
 			alt="Laracasts robot mascots"
 			class="absolute top-0 hidden lg:inline-block footer-img"
-			style="left: -200px; transform: scaleX(-1);"
+			style="left: -200px; transform: scaleX(-1)"
 		/>
 		<section class="pt-0 lg:pb-0 footer-section top">
 			<div class="container">
@@ -14,7 +14,7 @@
 					</div>
 					<div>
 						<form @submit.prevent id="newsletter-form">
-							<div class="flex flex-col justify-center max-w-sm mx-auto mb-6 md:flex-row lg:max-w-full lg:mx-0 lg:mb-0 ">
+							<div class="flex flex-col justify-center max-w-sm mx-auto mb-6 md:flex-row lg:max-w-full lg:mx-0 lg:mb-0">
 								<input
 									type="email"
 									class="px-4 py-4 mb-4 text-base text-center text-black outline-none md:w-1/2 md:py-3 md:mb-0 md:-ml-8 md:text-sm md:text-right text-opacity-60 md:rounded-2xl rounded-2xl font-IranSans"
@@ -213,6 +213,10 @@ export default {
 </script>
 
 <style scoped>
+body.not-found #footer {
+	display: none;
+}
+
 .footer-wrap {
 	background-image: radial-gradient(circle at 1% 1%, #328bf2, #1644ad);
 	background-position: 50%;

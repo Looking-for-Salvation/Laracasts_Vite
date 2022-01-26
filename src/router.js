@@ -1,60 +1,58 @@
 import { createRouter, createWebHistory } from "vue-router";
-import { defineAsyncComponent } from "vue";
 
-import TheHome from "@/views/TheHome.vue";
-import TheFooter from "@/components/ui/TheFooter.vue";
+import HomePage from "@/views/HomePage.vue";
 
 //* Topics components
-import TheTopics from "@/views/TheTopics.vue";
-import AllTopics from "@/views/topics/Topics.vue";
-import FrameworksTopic from "@/views/topics/Frameworks.vue";
-import LanguagesTopic from "@/views/topics/Languages.vue";
-import TechniquesTopic from "@/views/topics/Techniques.vue";
-import TestingTopic from "@/views/topics/Testing.vue";
-import ToolingTopic from "@/views/topics/Tooling.vue";
+import TopicsPage from "@/views/TopicsPage.vue";
+import Topics from "@/views/topics/Topics.vue";
+import FrameworkTopics from "@/views/topics/Frameworks.vue";
+import LanguageTopics from "@/views/topics/Languages.vue";
+import TechniqueTopics from "@/views/topics/Techniques.vue";
+import TestingTopics from "@/views/topics/Testing.vue";
+import ToolingTopics from "@/views/topics/Tooling.vue";
 
 //* Series component
-import TheSeries from "@/views/TheSeries.vue";
+import SeriesPage from "@/views/SeriesPage.vue";
 
 //* Podcast components
-import ThePodcast from "@/views/ThePodcast.vue";
+import PodcastPage from "@/views/PodcastPage.vue";
 
 //* Discuss components
-import TheDiscuss from "@/views/TheDiscuss.vue";
+import DiscussPage from "@/views/DiscussPage.vue";
 
 import NotFound from "@/views/NotFound.vue";
 
-const TheSignup = defineAsyncComponent(() => import("@/views/TheSignup.vue"));
-const TheFaq = defineAsyncComponent(() => import("@/views/TheFaq.vue"));
-const TheTerms = defineAsyncComponent(() => import("@/views/TheTerms.vue"));
-const ThePrivacy = defineAsyncComponent(() => import("@/views/ThePrivacy.vue"));
+const SignupPage = () => import("@/views/SignupPage.vue");
+const QuestionsPage = () => import("@/views/QuestionsPage.vue");
+const TermsPage = () => import("@/views/TermsPage.vue");
+const PrivacyPage = () => import("@/views/PrivacyPage.vue");
 
 const router = createRouter({
 	history: createWebHistory(),
 	routes: [
-		{ name: "Home", path: "/", components: { default: TheHome, footer: TheFooter } },
+		{ name: "Home", path: "/", component: HomePage },
 		{ name: "Join", path: "/join", redirect: { name: "Home", query: { modal: "join" } } },
 		{
 			name: "Browse",
 			path: "/browse",
-			components: { default: TheTopics, footer: TheFooter },
+			component: TopicsPage,
 			redirect: { name: "Browse All" },
 			children: [
-				{ name: "Browse All", path: "all", component: AllTopics },
-				{ name: "Browse Frameworks", path: "frameworks", component: FrameworksTopic },
-				{ name: "Browse Testing", path: "testing", component: TestingTopic },
-				{ name: "Browse Languages", path: "languages", component: LanguagesTopic },
-				{ name: "Browse Tooling", path: "tooling", component: ToolingTopic },
-				{ name: "Browse Techniques", path: "techniques", component: TechniquesTopic },
+				{ name: "Browse All", path: "all", component: Topics },
+				{ name: "Browse Frameworks", path: "frameworks", component: FrameworkTopics },
+				{ name: "Browse Languages", path: "languages", component: LanguageTopics },
+				{ name: "Browse Techniques", path: "techniques", component: TechniqueTopics },
+				{ name: "Browse Testing", path: "testing", component: TestingTopics },
+				{ name: "Browse Tooling", path: "tooling", component: ToolingTopics },
 			],
 		},
-		{ name: "Series", path: "/series", components: { default: TheSeries, footer: TheFooter } },
-		{ name: "Podcast", path: "/podcast", components: { default: ThePodcast, footer: TheFooter } },
-		{ name: "Discuss", path: "/discuss", components: { default: TheDiscuss, footer: TheFooter } },
-		{ name: "Sign Up", path: "/signup", components: { default: TheSignup, footer: TheFooter } },
-		{ name: "FAQ", path: "/faq", components: { default: TheFaq, footer: TheFooter } },
-		{ name: "Terms", path: "/terms", components: { default: TheTerms, footer: TheFooter } },
-		{ name: "Privacy", path: "/privacy", components: { default: ThePrivacy, footer: TheFooter } },
+		{ name: "Series", path: "/series", component: SeriesPage },
+		{ name: "Podcast", path: "/podcast", component: PodcastPage },
+		{ name: "Discuss", path: "/discuss", component: DiscussPage },
+		{ name: "Sign Up", path: "/signup", component: SignupPage },
+		{ name: "FAQ", path: "/faq", component: QuestionsPage },
+		{ name: "Terms", path: "/terms", component: TermsPage },
+		{ name: "Privacy", path: "/privacy", component: PrivacyPage },
 		{ name: "Not Found", path: "/:notFound(.*)", components: { rootroute: NotFound } },
 	],
 	linkActiveClass: "router-active",
